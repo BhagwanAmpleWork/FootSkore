@@ -1,10 +1,13 @@
 import {View, Text, StyleSheet} from 'react-native';
 import React, {useState} from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {ms} from 'react-native-size-matters';
+import {ms, vs} from 'react-native-size-matters';
 import {TeamCard} from '@components/card/leaguesearchcard';
-import {Fixture, Player, Standing} from '@components/teamdeatils';
+import Standing from '@components/teamdeatils/standing';
 import Info from '@components/teamdeatils/info';
+import Fixture from '@components/teamdeatils/fixture';
+import Player from '@components/teamdeatils/player';
+import {Font, Light} from '@theme';
 
 const TeamDetails = () => {
   const [click, setClick] = useState('all');
@@ -26,9 +29,9 @@ const TeamDetails = () => {
     <View style={{flex: 1}}>
       <View style={style.root}>
         <View style={style.rootSubContainer}>
-          <Ionicons name={'arrow-back'} size={25} color={'#fff'} />
+          <Ionicons name={'arrow-back'} size={20} color={'#fff'} />
           <Text style={style.headerTextStyle}>TEAM DETAILS</Text>
-          <Ionicons name="star-outline" size={22} color={'#fff'} />
+          <Ionicons name="star-outline" size={18} color={'#fff'} />
         </View>
         <View style={style.cardHeaderContainer}>
           <TeamCard source={require('@image/fk-logo.png')} title={'Ural U20'} />
@@ -38,12 +41,12 @@ const TeamDetails = () => {
         <View
           style={[
             style.headerContainer,
-            {backgroundColor: click == 'Info' ? '#E92742' : '#EBEBEB'},
+            {backgroundColor: click == 'Info' ? Light.primary : Light.card},
           ]}>
           <Text
             style={[
               style.textStyle,
-              {color: click == 'Info' ? '#fff' : '#808797'},
+              {color: click == 'Info' ? Light.background : Light.subtext},
             ]}
             onPress={infoOnPress}>
             Info
@@ -52,12 +55,12 @@ const TeamDetails = () => {
         <View
           style={[
             style.headerContainer,
-            {backgroundColor: click == 'Fixture' ? '#E92742' : '#EBEBEB'},
+            {backgroundColor: click == 'Fixture' ? Light.primary : Light.card},
           ]}>
           <Text
             style={[
               style.textStyle,
-              {color: click == 'Fixture' ? '#fff' : '#808797'},
+              {color: click == 'Fixture' ? Light.background : Light.subtext},
             ]}
             onPress={fixtureOnPress}>
             Fixture
@@ -66,12 +69,12 @@ const TeamDetails = () => {
         <View
           style={[
             style.headerContainer,
-            {backgroundColor: click == 'Player' ? '#E92742' : '#EBEBEB'},
+            {backgroundColor: click == 'Player' ? Light.primary : Light.card},
           ]}>
           <Text
             style={[
               style.textStyle,
-              {color: click == 'Player' ? '#fff' : '#808797'},
+              {color: click == 'Player' ? Light.background : Light.subtext},
             ]}
             onPress={playerOnPress}>
             Player
@@ -80,12 +83,12 @@ const TeamDetails = () => {
         <View
           style={[
             style.headerContainer,
-            {backgroundColor: click == 'Standing' ? '#E92742' : '#EBEBEB'},
+            {backgroundColor: click == 'Standing' ? Light.primary : Light.card},
           ]}>
           <Text
             style={[
               style.textStyle,
-              {color: click == 'Standing' ? '#fff' : '#808797'},
+              {color: click == 'Standing' ? Light.background : Light.subtext},
             ]}
             onPress={standingOnPress}>
             Standing
@@ -110,14 +113,14 @@ const TeamDetails = () => {
 const style = StyleSheet.create({
   root: {
     width: '100%',
-    height: '22%',
-    backgroundColor: '#E92742',
-    borderBottomEndRadius: 20,
-    borderBottomStartRadius: 20,
+    height: ms(150),
+    backgroundColor: Light.primary,
+    borderBottomEndRadius: 30,
+    borderBottomStartRadius: 30,
   },
   rootSubContainer: {
     flexDirection: 'row',
-    marginTop: '10%',
+    marginTop: vs(42),
     justifyContent: 'center',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -128,19 +131,20 @@ const style = StyleSheet.create({
     marginLeft: ms(26),
     marginRight: ms(26),
     zIndex: 1,
-    marginTop: '4%',
+    marginTop: vs(5),
   },
   midContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginTop: '25%',
+    marginTop: vs(70),
     marginLeft: ms(22),
     marginRight: ms(22),
   },
   headerTextStyle: {
     color: '#fff',
-    fontSize: ms(20),
+    fontSize: ms(24),
     fontWeight: '700',
+    fontFamily: Font.TekoSemibold,
   },
   headerContainer: {
     borderRadius: 25,
