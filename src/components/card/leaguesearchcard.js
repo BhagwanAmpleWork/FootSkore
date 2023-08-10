@@ -1,9 +1,9 @@
 import {View, Text, StyleSheet, Image} from 'react-native';
 import React from 'react';
-import {ms, s} from 'react-native-size-matters';
+import {ms, s, vs} from 'react-native-size-matters';
 import AddIcon from 'react-native-vector-icons/Fontisto';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
-import {Light} from '../../theme';
+import {Light} from '@theme';
 
 const Leaguesearchcard = ({
   source,
@@ -13,29 +13,24 @@ const Leaguesearchcard = ({
   sublasttitle,
 }) => {
   return (
-    <View
-      style={{
-        width: '100%',
-        backgroundColor: Light.card,
-        borderRadius: 10,
-        padding: 12,
-        marginTop: '5%',
-      }}>
+    <View style={style.leagueCardContainer}>
       <View
         style={{
           flexDirection: 'row',
           justifyContent: 'space-between',
-          marginBottom: '3%',
+          marginBottom: ms(5),
+          marginLeft: ms(10),
+          marginRight: ms(10),
         }}>
         <Text style={{color: Light.icon}}>2023-08-01</Text>
-        <Text style={{color: Light.icon}}>1:22</Text>
+        <Text style={{color: Light.icon}}>01:22</Text>
       </View>
       <View style={style.cardMidContainer}>
         <View style={style.cardMidSubContainer}>
-          <AddIcon name={'home'} size={20} color={Light.icon} />
-          <Image source={source} style={{width: s(40), height: s(41)}} />
+          <AddIcon name={'home'} size={18} color={Light.icon} />
+          <Image source={source} style={{width: s(40), height: s(40)}} />
           <View style={{justifyContent: 'center', alignItems: 'center'}}>
-            <Text style={{fontSize: ms(15), color: Light.icon}}>
+            <Text style={{fontSize: ms(14), color: Light.icon}}>
               {subtitle}
             </Text>
           </View>
@@ -69,11 +64,11 @@ const Leaguesearchcard = ({
         <View style={style.cardMidSubContainer}>
           <MaterialIcon
             name={'airplanemode-active'}
-            size={28}
+            size={25}
             color={Light.icon}
           />
-          <Image source={subsource} style={{width: s(40), height: s(36)}} />
-          <Text style={{fontSize: ms(15), color: Light.icon}}>
+          <Image source={subsource} style={{width: s(39), height: s(36)}} />
+          <Text style={{fontSize: ms(14), color: Light.icon}}>
             {sublasttitle}
           </Text>
         </View>
@@ -97,10 +92,10 @@ const TeamCard = ({source, title}) => {
         style={{
           justifyContent: 'center',
           alignItems: 'center',
-          rowGap: 12,
+          rowGap: 8,
         }}>
         <Image source={source} style={{width: ms(50), height: ms(50)}} />
-        <Text style={{fontSize: ms(18)}}>{title}</Text>
+        <Text style={{fontSize: ms(18), fontWeight: '600'}}>{title}</Text>
       </View>
     </View>
   );
@@ -127,7 +122,6 @@ const LeagueCard = () => {
         style={{
           marginLeft: ms(20),
           justifyContent: 'center',
-          // alignItems: 'center',
           rowGap: 5,
         }}>
         <Text>Manchester United</Text>
@@ -138,6 +132,13 @@ const LeagueCard = () => {
 };
 
 const style = StyleSheet.create({
+  leagueCardContainer: {
+    marginTop: vs(18),
+    width: '100%',
+    backgroundColor: Light.card,
+    borderRadius: 10,
+    padding: 10,
+  },
   cardMidContainer: {
     marginRight: ms(20),
     marginLeft: ms(20),
@@ -145,12 +146,11 @@ const style = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingBottom: 11,
   },
   cardMidSubContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    rowGap: 11,
+    rowGap: 4,
   },
   cardRadioContainer: {
     height: s(25),

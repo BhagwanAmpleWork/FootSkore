@@ -27,7 +27,7 @@ const Index = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="WelcomeScreen"
+        initialRouteName="TeamDetails"
         screenOptions={{headerShown: false}}>
         <Stack.Screen name="OnboardingScreen" component={OnboardingScreen} />
         <Stack.Screen
@@ -48,7 +48,7 @@ const Index = () => {
         <Stack.Screen name="SearhBar" component={LeagueSearch} />
         <Stack.Screen name="LeagueDetails" component={LeaguesDetails} />
         <Stack.Screen name="Standing" component={Standing} />
-        <Stack.Screen name="SearchIcon" component={Matchfixsearch} />
+        <Stack.Screen name="GlobalSearch" component={Matchfixsearch} />
         <Stack.Screen name="TeamDetails" component={TeamDetails} />
       </Stack.Navigator>
     </NavigationContainer>

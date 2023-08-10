@@ -8,7 +8,7 @@ import Player from './player';
 import Topscoere from './topscoere';
 import Injury from './injury';
 import Standing from './standing';
-import {Font, Light} from '../../../theme';
+import {Font, Light} from '@theme';
 
 const LeagueDetails = props => {
   const goBack = () => props.navigation.goBack();

@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import {ms} from 'react-native-size-matters';
 import Total from './total';
 import Home from '@components/leaguedetails/noinformation';
-import {Light} from '../../../theme';
+import {Light} from '@theme';
 
 const Standing = () => {
   const [top, setTop] = useState('all');

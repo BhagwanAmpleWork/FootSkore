@@ -37,7 +37,6 @@ const HollowButton = ({onPress}) => {
 const style = StyleSheet.create({
   button: {
     marginTop: s(17),
-    // backgroundColor: '#DC143C',
     width: '100%',
     height: s(44),
     borderRadius: ms(30),

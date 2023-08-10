@@ -1,7 +1,7 @@
 import {View, Text, StyleSheet, Image} from 'react-native';
 import React from 'react';
 import {ms} from 'react-native-size-matters';
-import {Light} from '../../theme';
+import {Light} from '@theme/index';
 
 const VenueCard = ({
   source,

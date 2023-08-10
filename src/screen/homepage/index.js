@@ -7,13 +7,13 @@ import Data from './data';
 import Card from '@components/card';
 
 const TeamDetail = ({navigation}) => {
-  const navigateTo = () => navigation.navigate('SearchIcon');
+  const navigateTo = () => navigation.navigate('GlobalSearch');
   return (
     <View style={style.root}>
       <AppHeader title={'MATCH FIXTURE'} onPress={navigateTo} />
       <View style={style.container}>
         <TouchableOpacity style={style.calendarIcon}>
-          <Icon name={'calendar'} size={28} color={'#409CFF'} />
+          <Icon name={'calendar'} size={25} color={'#409CFF'} />
         </TouchableOpacity>
         <View style={style.calendarContainer}>
           <FlatList

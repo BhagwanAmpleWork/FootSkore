@@ -1,20 +1,20 @@
 import {View, Text, Image, StyleSheet} from 'react-native';
 import React from 'react';
-import {Font, Light} from '../../theme';
-import {ms} from 'react-native-size-matters';
+import {Font, Light} from '@theme';
+import {ms, vs} from 'react-native-size-matters/extend';
 
 const Info = () => {
   return (
     <View style={style.root}>
       <View style={style.cardContiner}>
-        <View style={{rowGap: 8, marginLeft: '2%'}}>
+        <View style={{rowGap: 8, marginLeft: vs(4)}}>
           <Text style={style.textStyle}>Country:</Text>
           <Text style={style.textStyle}>Venue:</Text>
           <Text style={style.textStyle}>Address:</Text>
           <Text style={style.textStyle}>Capacity:</Text>
           <Text style={style.textStyle}>Founded:</Text>
         </View>
-        <View style={{rowGap: 8, marginLeft: '10%'}}>
+        <View style={{rowGap: 8, marginLeft: vs(24)}}>
           <Text style={style.textStyle}>USA</Text>
           <Text style={style.textStyle}>Soldier Field</Text>
           <Text style={style.textStyle}>1410 South Museum Campus Drive</Text>
@@ -22,13 +22,7 @@ const Info = () => {
           <Text style={style.textStyle}>N / A</Text>
         </View>
       </View>
-      <View
-        style={{
-          backgroundColor: Light.card,
-          borderRadius: 10,
-          padding: 14,
-          marginTop: '5%',
-        }}>
+      <View style={style.footerContiner}>
         <Text style={style.headerTextStyle}>Coach</Text>
         <View
           style={{
@@ -71,17 +65,23 @@ const style = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: Light.card,
     borderRadius: 10,
-    padding: 14,
-    marginTop: '5%',
+    padding: ms(14),
+    marginTop: vs(20),
   },
   textStyle: {
-    fontSize: 12,
+    fontSize: ms(12),
   },
   headerTextStyle: {
     fontFamily: Font.InterBold,
     fontWeight: '600',
-    marginLeft: '2%',
-    marginBottom: '2%',
+    marginLeft: ms(4),
+    marginBottom: ms(4),
+  },
+  footerContiner: {
+    backgroundColor: Light.card,
+    borderRadius: 10,
+    padding: 14,
+    marginTop: '5%',
   },
 });
 
